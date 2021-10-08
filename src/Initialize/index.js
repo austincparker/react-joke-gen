@@ -18,7 +18,7 @@ function Initialize() {
   return (
     <div className="App">
       <div className="container">
-        <div className="jokeContainer p-5 pb-3 text-center">
+        <div className="jokeContainer p-5 text-center">
           <h1 className="display-4 mb-5">{joke.setup}</h1>
           <h5 className="display-6">
             {btnText !== 'Get Punchline' ? joke.punchline : ''}
@@ -26,13 +26,16 @@ function Initialize() {
         </div>
         <div className="btnContainer text-center">
           {btnText === 'Get a Joke' || btnText === 'Get Another Joke' ? (
-            <button
-              onClick={getAJoke}
-              className="btn btn-primary m-5"
-              type="button"
-            >
-              {btnText}
-            </button>
+            <div>
+              <p>Want to hear a joke?</p>
+              <button
+                onClick={getAJoke}
+                className="btn btn-primary m-5 mt-1"
+                type="button"
+              >
+                {btnText}
+              </button>
+            </div>
           ) : (
             <button
               onClick={() => setBtnText('Get Another Joke')}
